@@ -32,7 +32,7 @@ int partition(int *array, int lb, int ub, size_t size)
 {
 	int pivot, start, end;
 
-	pivot = array[lb];
+	pivot = array[ub];
 	start = lb, end = ub;
 
 	while (start < end)
