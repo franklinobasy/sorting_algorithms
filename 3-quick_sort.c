@@ -2,11 +2,11 @@
 
 /**
  * swap - swaps positions of two elements in an array
- * 
+ *
  * @array: pointer to array containing elements to swap
  * @idx1: index of first element
  * @idx2: index of second element
- * 
+ *
  */
 void swap(int *array, int idx1, int idx2)
 {
@@ -25,7 +25,7 @@ void swap(int *array, int idx1, int idx2)
  * @ub: upper boundary
  * @size: size of the array
  *
- * Return: index of end 
+ * Return: index of end
  */
 
 int partition(int *array, int lb, int ub, size_t size)
@@ -50,7 +50,7 @@ int partition(int *array, int lb, int ub, size_t size)
 	swap(array, lb, end);
 	print_array(array, size);
 
-	return end;
+	return (end);
 }
 
 /**
@@ -81,6 +81,7 @@ void recursive_sort(int *array, int lb, int ub, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	int lb, ub;
+
 	lb = 0;
 	ub = (int)size - 1;
 	recursive_sort(array, lb, ub, size);
