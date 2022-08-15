@@ -55,7 +55,7 @@ int partition(int *array, int lb, int ub, size_t size)
 
 /**
  *  recursive_sort - sorts an array partition recursively
- * @array - array to sort
+ * @array: array to sort
  * @lb: lower boundary
  * @ub: upper boundary
  * @size: size of the array
