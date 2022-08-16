@@ -33,8 +33,9 @@ int partition(int *array, int lb, int ub, size_t size)
 {
 	int pivot, start, end;
 
-	pivot = array[ub];
-	start = lb, end = ub;
+	pivot = array[lb];
+	start = lb;
+	end = ub;
 
 	while (start < end)
 	{
@@ -79,9 +80,5 @@ void recursive_sort(int *array, int lb, int ub, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int lb, ub;
-
-	lb = 0;
-	ub = (int)size - 1;
-	recursive_sort(array, lb, ub, size);
+	recursive_sort(array, 0, (int)size - 1, size);
 }
