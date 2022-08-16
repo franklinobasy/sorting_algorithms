@@ -15,7 +15,7 @@ void swap(int *array, int idx1, int idx2, size_t size)
 	temp = array[idx1];
 	array[idx1] = array[idx2];
 	array[idx2] = temp;
-	print_array(array, size);
+	print_array(array, size)
 }
 
 /**
