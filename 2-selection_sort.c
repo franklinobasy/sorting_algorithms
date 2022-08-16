@@ -28,6 +28,11 @@ void swap(int *array, int idx1, int idx2, size_t size)
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, min;
+	
+	if (array == NULL)
+		return;
+	if (size < 2)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
