@@ -4,16 +4,17 @@
  * swap - swaps positions of two elements in an array
  *
  * @array: pointer to array containing elements to swap
- * @idx1: index of first element
- * @idx2: index of second element
+ * @idxa: index of first element
+ * @idxb: index of second element
+ * @size: size of array
  */
-void swap(int *array, int idx1, int idx2, size_t size)
+void swap(int *array, int idxa, int idxb, size_t size)
 {
 	int temp;
 
-	temp = array[idx1];
-	array[idx1] = array[idx2];
-	array[idx2] = temp;
+	temp = array[idxa];
+	array[idxa] = array[idxb];
+	array[idxb] = temp;
 	print_array(array, size);
 }
 
