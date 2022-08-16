@@ -8,13 +8,14 @@
  * @idx2: index of second element
  *
  */
-void swap(int *array, int idx1, int idx2)
+void swap(int *array, int idx1, int idx2, size_t size)
 {
 	int temp;
 
 	temp = array[idx1];
 	array[idx1] = array[idx2];
 	array[idx2] = temp;
+	print_array(array, size);
 }
 
 /**
@@ -38,8 +39,7 @@ void selection_sort(int *array, size_t size)
 		}
 		if (min != i)
 		{
-			swap(array, i, min);
-			print_array(array, size);
+			swap(array, i, min, size);
 		}
 	}
 }

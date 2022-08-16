@@ -8,13 +8,14 @@
  * @idx2: index of second element
  *
  */
-void swap(int *array, int idx1, int idx2)
+void swap(int *array, int idx1, int idx2, size_t size)
 {
 	int temp;
 
 	temp = array[idx1];
 	array[idx1] = array[idx2];
 	array[idx2] = temp;
+	print_array(array, size)
 }
 
 /**
@@ -43,12 +44,10 @@ int partition(int *array, int lb, int ub, size_t size)
 			end--;
 		if (start < end)
 		{
-			swap(array, start, end);
-			print_array(array, size);
+			swap(array, start, end, size);
 		}
 	}
-	swap(array, lb, end);
-	print_array(array, size);
+	swap(array, lb, end, size);
 
 	return (end);
 }
