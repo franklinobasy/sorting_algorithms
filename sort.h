@@ -20,7 +20,7 @@ typedef struct listint_s
 
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
-void swap(int *array, int idx1, int idx2);
+void swap(int *array, int idx1, int idx2, size_t size);
 listint_t *swap_list(listint_t *x, listint_t *y, listint_t **list);
 int partition(int *array, int lb, int ub, size_t size);
 

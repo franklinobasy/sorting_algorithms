@@ -7,13 +7,14 @@
  * @idx1: index of first element
  * @idx2: index of second element
  */
-void swap(int *array, int idx1, int idx2)
+void swap(int *array, int idx1, int idx2, size_t size)
 {
 	int temp;
 
 	temp = array[idx1];
 	array[idx1] = array[idx2];
 	array[idx2] = temp;
+	print_array(array, size);
 }
 
 
@@ -39,8 +40,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(array, j, j + 1);
-				print_array(array, size);
+				swap(array, j, j + 1, size);
 				flag = 1;
 			}
 		}
