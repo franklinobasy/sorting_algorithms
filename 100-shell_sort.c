@@ -1,4 +1,24 @@
 #include "sort.h"
+
+/**
+ * swap - swaps positions of two elements in an array
+ *
+ * @array: pointer to array containing elements to swap
+ * @idx1: index of first element
+ * @idx2: index of second element
+ * @size: size of array
+ *
+ */
+void swap(int *array, int idx1, int idx2, size_t size)
+{
+	int temp;
+
+	temp = array[idx1];
+	array[idx1] = array[idx2];
+	array[idx2] = temp;
+	print_array(array, size);
+}
+
 /**
  * shell_sort -Sort an array using shell_sort algorithm
  * @array: array
@@ -7,30 +27,26 @@
  **/
 void shell_sort(int *array, size_t size)
 {
-	unsigned int gap = 1, i, j;
-	int temp;
+	int gap = 1, i, j;
 
 	if (array == NULL)
 		return;
 	if (size < 2)
 		return;
-	while (gap < size / 3)
+	while (gap < (int)size / 3)
 		gap = gap * 3 + 1;
 
-	while (gap > 0)
+	for (gap = gap; gap >= 1; gap /= 2)
 	{
-		for (i = gap; i < size; i++)
+		for (j = gap; j < (int)size; j++)
 		{
-			temp = array[i];
-			j = i;
-			while (j >= gap && array[j - gap] > temp)
+			for (i = j - gap; i >= 0; i -= gap)
 			{
-				array[j] = array[j - gap];
-				j -= gap;
+				if (array[i + gap] > array[i])
+					break;
+				else
+					swap(array, i + gap, i, size);
 			}
-			array[j] = temp;
 		}
-		print_array(array, size);
-		gap /= 3;
 	}
 }
